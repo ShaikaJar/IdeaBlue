@@ -1,0 +1,38 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>IdeaBlue</name>
+  <version>1.0</version>
+  <vendor email="lorenz@karolo.de" url="karolo.de">Anonym</vendor>
+
+  <description>fkldbslfbaslöjfbsalöfbsdaöjlsadbfölabfljjasflsadnlkasfdnflkaskn</description>
+
+  <change-notes>
+    Initial Release
+    Initial Release
+    Initial Release
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="193.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <projectService serviceImplementation="com.github.shaikajar.ideablue.services.MyProjectService"/>
+    <applicationService serviceImplementation="com.github.shaikajar.ideablue.services.MyApplicationService"/>
+  </extensions>
+
+
+  <applicationListeners>
+    <listener class="com.github.shaikajar.ideablue.listeners.MyProjectManagerListener"
+              topic="com.intellij.openapi.project.ProjectManagerListener"/>
+  </applicationListeners>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
